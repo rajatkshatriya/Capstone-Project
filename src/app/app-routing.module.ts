@@ -1,12 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashBoardComponent } from './Dashboard/dashboard-component';
-import { ReactiveDemoApproach } from './Reactive form/reactive-from-approach';
+import { LoginComponent } from './Login-Details/login-component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import{ SignupComponent } from './Signup Form/signup-form';
 
 const routes: Routes = [
 
-  {path:'dashboard',component:DashBoardComponent},
-  {path:'reactive',component:ReactiveDemoApproach}
+  {path:'signup',component:SignupComponent},
+  {path:'login',component:LoginComponent},
+  {path:'logout',component:LoginComponent},
+  {path:'loginPage',component:LoginComponent},
+  {path:'**',component:PagenotfoundComponent}
+  
+ 
 ];
 
 @NgModule({
@@ -14,3 +21,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
+

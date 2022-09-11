@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { LoginServiceComponent } from '../Services/login-component-service';
+import { LoginServiceComponent } from '../Services/login-service-component';
+
 
 @Component({
     selector:'login',
@@ -14,8 +15,8 @@ passworduser:string="";
 isLogin:boolean=false;
 issignup:boolean=false;
 
-constructor(private _userservice:LoginServiceComponent) { }
-user1=this._userservice.getusers();
+constructor(private _loginservice:LoginServiceComponent) { }
+user1=this._loginservice.getusers();
 
 
 ngOnInit(): void {
@@ -28,7 +29,7 @@ LoginForm(form:NgForm){
  }
   onclick(){
  
-   this.isLogin=this._userservice.Validate(this.emailuser,this.passworduser);
+   this.isLogin=this._loginservice.Validate(this.emailuser,this.passworduser);
  }
  onclicksignup(){
       this.issignup=!this.issignup;
